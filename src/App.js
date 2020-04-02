@@ -31,6 +31,24 @@ function App() {
         lng: position.coords.longitude
     })
   }
+  const customDistanceToMouse = (pt, mousePos, markerProps) => {
+    // console.log(pt)
+    // const K_SCALE_NORMAL = 0.65;
+  
+    // const K_MARKER_HEIGHT = 60;
+    // const K_MARKER_WEIGHT_PT = K_MARKER_HEIGHT * 0.7;
+
+
+    // const scale = markerProps.scale;
+    // const x = pt.x;
+    // const y = pt.y - K_MARKER_WEIGHT_PT * scale;
+  
+    // const scaleNormalized = Math.min(scale / K_SCALE_NORMAL, 1);
+    // const K_MIN_DIST_MIN_KOEF = 0.6;
+  
+    // const distKoef = 1 + scaleNormalized * (K_MIN_DIST_MIN_KOEF - 1);
+    return 20;
+  }
   return (
     <div className="App">
       <GoogleMapReact
@@ -39,6 +57,8 @@ function App() {
                               region: 'ng' }}
           center={state.center}
           defaultZoom={state.zoom}
+          distanceToMouse={customDistanceToMouse}
+          hoverDistance={30}
         >
           <Pin
             lat={state.lat}

@@ -21,7 +21,7 @@ const Pin = (props) => {
                     <p className="card-text">Longitude: {props.lng}</p>
                 </div>
             </div>
-            <img src={PinImage} alt="map pin" onMouseOver={toggleCard} onMouseOut={toggleCard}/>
+            <img src={PinImage} alt="map pin" onMouseOver={toggleCard} onMouseLeave={toggleCard}/>
         </div>
     )
 }
